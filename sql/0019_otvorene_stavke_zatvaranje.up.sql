@@ -81,4 +81,5 @@ AFTER INSERT OR UPDATE OR DELETE ON fmk.fin_suban
 
 
 -- ovaj indeks je bitan izgleda
-create index IF NOT EXISTS fin_suban_otvrst ON fmk.fin_suban  (trim(idkonto), trim(idpartner), trim(brdok));
+drop index IF EXISTS fin_suban_otvrst;
+create index fin_suban_otvrst ON fmk.fin_suban  (trim(idkonto), trim(idpartner), trim(brdok));

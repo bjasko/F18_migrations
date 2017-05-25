@@ -107,4 +107,5 @@ $body$
 LANGUAGE plpgsql;
 
 -- da gornji select ubrzamo
-create index IF NOT EXISTS fin_suban_datval_datdok ON fmk.fin_suban  (idfirma,idkonto,idpartner,coalesce(datval,datdok),brdok);
+drop index if EXISTS fin_suban_datval_datdok;
+create index fin_suban_datval_datdok ON fmk.fin_suban  (idfirma,idkonto,idpartner,coalesce(datval,datdok),brdok);

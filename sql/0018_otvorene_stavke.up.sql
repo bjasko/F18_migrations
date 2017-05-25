@@ -1,7 +1,10 @@
+DROP INDEX IF EXISTS fin_suban_brnal;
+DROP INDEX IF EXISTS fin_suban_konto_partner;
+DROP INDEX IF EXISTS fin_suban_konto_partner_brdok;
 
-CREATE INDEX IF NOT EXISTS fin_suban_brnal ON fmk.fin_suban (idfirma,idvn,brnal,rbr);
-CREATE INDEX IF NOT EXISTS fin_suban_konto_partner ON fmk.fin_suban (idfirma,idkonto,idpartner,datdok);
-CREATE INDEX IF NOT EXISTS fin_suban_konto_partner_brdok ON fmk.fin_suban (idfirma,idkonto,idpartner,brdok,datdok);
+CREATE INDEX  fin_suban_brnal ON fmk.fin_suban (idfirma,idvn,brnal,rbr);
+CREATE INDEX  fin_suban_konto_partner ON fmk.fin_suban (idfirma,idkonto,idpartner,datdok);
+CREATE INDEX  fin_suban_konto_partner_brdok ON fmk.fin_suban (idfirma,idkonto,idpartner,brdok,datdok);
 
 
 CREATE OR REPLACE FUNCTION sp_duguje_stanje( param_konto varchar(7), param_partner varchar(6),

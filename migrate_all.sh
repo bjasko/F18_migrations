@@ -17,9 +17,9 @@ export PGPASSWORD PGUSER
 
 if [ -n "$4" ]
   then
-    DB=$(psql -lt -h $PGHOST -U $PGUSER | egrep -v 'template[01]' | egrep -v 'postgres' | grep _ | grep $4 |awk '{print $1}')
+    DB=$(psql -lt -h $PGHOST -U $PGUSER -p $5 | egrep -v 'template[01]' | egrep -v 'postgres' | grep _ | grep $4 |awk '{print $1}')
   else
-    DB=$(psql -lt -h $PGHOST -U $PGUSER | egrep -v 'template[01]' | egrep -v 'postgres' | grep _ | awk '{print $1}')
+    DB=$(psql -lt -h $PGHOST -U $PGUSER -p $5 | egrep -v 'template[01]' | egrep -v 'postgres' | grep _ | awk '{print $1}')
 fi
 
 # vrti update
@@ -27,8 +27,8 @@ fi
 for d in $DB
         do
         echo "Migracija baze $d u toku ..................."
-        $MIGRATE  -url postgres://$PGUSER@$PGHOST:5432/$d?sslmode=disable -path $SQLPATH up
-        $MIGRATE  -url postgres://$PGUSER@$PGHOST:5432/$d?sslmode=disable -path $SQLPATH version
+        $MIGRATE  -url postgres://$PGUSER@$PGHOST:$5/$d?sslmode=disable -path $SQLPATH up
+        $MIGRATE  -url postgres://$PGUSER@$PGHOST:$5/$d?sslmode=disable -path $SQLPATH version
         echo "Migracija baze $d je završena, idem dalje"
 done
 
