@@ -1,0 +1,21 @@
+DROP TABLE if exists fmk.kadev_0;
+DROP TABLE if exists fmk.kadev_1;
+DROP TABLE if exists fmk.kadev_cin;
+DROP TABLE if exists fmk.kadev_defrjes;
+DROP TABLE if exists fmk.kadev_globusl;
+DROP TABLE if exists fmk.kadev_k1;
+DROP TABLE if exists fmk.kadev_k2;
+DROP TABLE if exists fmk.kadev_mz;
+DROP TABLE if exists fmk.kadev_nac;
+DROP TABLE if exists fmk.kadev_nerdan;
+DROP TABLE if exists fmk.kadev_obrazdef;
+DROP TABLE if exists fmk.kadev_promj;
+DROP TABLE if exists fmk.kadev_rj;
+DROP TABLE if exists fmk.kadev_rjes;
+DROP TABLE if exists fmk.kadev_rjrmj;
+DROP TABLE if exists fmk.kadev_rmj;
+DROP TABLE if exists fmk.kadev_rrasp;
+DROP TABLE if exists fmk.kadev_uslovi;
+DROP TABLE if exists fmk.kadev_ves;
+DROP TABLE if exists fmk.kadev_zanim;
+DELETE  FROM fmk.log
